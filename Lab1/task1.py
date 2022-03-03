@@ -23,6 +23,15 @@ def multiple_un1_un_plot(*args):
         plot_nr += 1
         obj.plot_un1_horizontal_un_vertical()
     plt.show()
+    
+def multiple_plot3d(*args):
+    columns = len(args)
+    plot_nr = 1
+    for obj in args:
+        plt.subplot(1, columns, plot_nr)
+        plot_nr += 1
+        obj.plot_3d()
+    plt.show()
 
 class Prng:
     def __init__(self, a, c, m, x) -> None:
@@ -56,11 +65,21 @@ class Prng:
             self.randoms = list(map(lambda x: float(x.rstrip()), f.readlines()))
         
     def plot_un_horizontal_n_vertical(self):
-        plt.plot(self.randoms, [_ for _ in range(len(self.randoms))])
+        plt.plot(self.randoms, [_ for _ in range(len(self.randoms))],'-o', markersize=2, linewidth=0.6)
         
     def plot_un1_horizontal_un_vertical(self):
-        plt.plot(self.randoms[1::2], self.randoms[::2])
-    
+        plt.plot(self.randoms[1::2], self.randoms[::2], '.')
+        
+    def plot_3d(self):
+        fig = plt.figure()
+ 
+        # syntax for 3-D projection
+        ax = plt.axes(projection ='3d')
+        plot_list = self.randoms[:-1]
+        # plotting
+        ax.plot3D(plot_list[2::3], plot_list[1::3], plot_list[::3], '.')
+        ax.set_title('')
+        plt.show()
     
 r = Prng(23, 0, pow(10, 8) + 1, 1)
 r.read_sequence('LGC1-N1000U0.txt')
@@ -78,6 +97,8 @@ r3 = Prng(23, 0, pow(10, 8) + 1, 1000)
 r3.generate_sequence(1000)
 print(len(r3.randoms))
 
-multiple_horizontal_plot(r,r1,r2,r3)
-# multiple_un1_un_plot(r,r1,r2,r3) ???
+# multiple_horizontal_plot(r,r1,r2,r3)
+# multiple_un1_un_plot(r,r1,r2,r3)
+# r2.plot_3d()
+
 
