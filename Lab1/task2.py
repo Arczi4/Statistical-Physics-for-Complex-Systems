@@ -4,7 +4,7 @@ import random
 
 direction = [-1, 1]
 
-d = 40
+d = 10
 
 kate_pos = 0 # Kate position
 john_pos = d # John pos
@@ -14,7 +14,7 @@ while kate_pos != john_pos:
     # Update positions
     kate_update = random.choice(direction)
     john_update = random.choice(direction)
-    
+        
     if (kate_pos + kate_update) < 0 or (kate_pos + kate_update) > d:
         continue
     else:
