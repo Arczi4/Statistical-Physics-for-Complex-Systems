@@ -1,10 +1,5 @@
-from ast import arg
-from audioop import mul
 from math import pow
 import matplotlib.pyplot as plt
-# a = 23
-# c = 0
-# m = pow(10, 8) + 1
 
 def multiple_horizontal_plot(*args):
     columns = len(args)
@@ -97,8 +92,8 @@ r3 = Prng(23, 0, pow(10, 8) + 1, 1000)
 r3.generate_sequence(1000)
 print(len(r3.randoms))
 
-# multiple_horizontal_plot(r,r1,r2,r3)
-# multiple_un1_un_plot(r,r1,r2,r3)
-# r2.plot_3d()
+multiple_horizontal_plot(r,r1,r2,r3)
+multiple_un1_un_plot(r,r1,r2,r3)
+r2.plot_3d()
 
 
