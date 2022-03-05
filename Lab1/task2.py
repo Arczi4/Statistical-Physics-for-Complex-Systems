@@ -32,8 +32,12 @@ for x in range(1, N+1):
         time += 1
 
     plt.subplot(2,2,x)
+    ax = plt.gca()
     plt.plot(kate_pos,'-o', markersize=4)
     plt.plot(john_pos,'-o', markersize=4)
+    plt.xlabel("Time")
+    ax.xaxis.set_label_coords(.9, -.1)
+    plt.ylabel("Positon")
     plt.plot([0, len(kate_pos)-1], [kate_pos[-1], kate_pos[-1]], color='red', marker='o')
     plt.title(f"Met after {time}")
     kate_pos = [0] # Kate position
