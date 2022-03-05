@@ -162,6 +162,9 @@ i3.generate_sequence(1000)
 
 # Task 3
 p = Python_random(3000)
-multiple_horizontal_plot(p)
-multiple_un1_un_plot(p)
+p1 = Python_random(1000)
+p2 = Python_random(1000)
+p3 = Python_random(1000)
+multiple_horizontal_plot(p, p1, p2, p3)
+multiple_un1_un_plot(p, p1, p2, p3)
 p.plot_3d()
