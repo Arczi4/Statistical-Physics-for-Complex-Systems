@@ -11,6 +11,7 @@ kate_pos = [0] # Kate position
 john_pos = [d] # John pos
 
 N = 4
+avg_time = 0
 for x in range(1, N+1):
     time = 0
     while kate_pos[-1] != john_pos[-1]:
@@ -42,6 +43,9 @@ for x in range(1, N+1):
     plt.title(f"Met after {time}")
     kate_pos = [0] # Kate position
     john_pos = [d] # John pos
-    
+    avg_time += time
+
+
+print(f"Meeting average time: {avg_time/N} for d = {d}")
 plt.show()
 
