@@ -29,17 +29,19 @@ for x in range(1, N+1):
         else:
             john_pos.append(john_pos[-1] + john_update)
         
-        print(kate_pos[-1], john_pos[-1])
+        # print(kate_pos[-1], john_pos[-1])
         time += 1
 
+    
     plt.subplot(2,2,x)
     ax = plt.gca()
-    plt.plot(kate_pos,'-o', markersize=4)
-    plt.plot(john_pos,'-o', markersize=4)
+    plt.plot(kate_pos,'-o', markersize=4, label='Kate')
+    plt.plot(john_pos,'-o', markersize=4, label='John')
     plt.xlabel("Time")
     ax.xaxis.set_label_coords(.9, -.1)
     plt.ylabel("Positon")
-    plt.plot([0, len(kate_pos)-1], [kate_pos[-1], kate_pos[-1]], color='red', marker='o')
+    plt.legend()
+    # plt.plot([0, len(kate_pos)-1], [kate_pos[-1], kate_pos[-1]], color='red', marker='o')
     plt.title(f"Met after {time}")
     kate_pos = [0] # Kate position
     john_pos = [d] # John pos
