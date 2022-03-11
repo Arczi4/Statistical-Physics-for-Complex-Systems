@@ -94,6 +94,7 @@ while d < 100:
 
 # Avg time plot
 plt.plot(avg_time_list, '.')
+plt.xlabel("distance")
+plt.ylabel("avg time")
 plt.show()
-    
-    
+
