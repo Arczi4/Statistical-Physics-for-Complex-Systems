@@ -1,4 +1,3 @@
-from itertools import count
 import random
 import matplotlib.pyplot as plt
 
